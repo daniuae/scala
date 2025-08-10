@@ -1,0 +1,7 @@
+3. Advanced Scala Concepts
+Implicits (parameters, conversions)
+Type classes and context bounds
+Abstract types and path-dependent types
+Variance (covariant, contravariant)
+Futures and asynchronous programming
+Macros and meta programming (basic intro)
