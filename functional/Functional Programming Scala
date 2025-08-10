@@ -1,0 +1,7 @@
+2. Functional Programming in Scala
+Immutability and pure functions
+Higher-order functions and lambdas
+Pattern matching and case classes
+Option, Either, Try for safe handling
+Recursion and tail recursion
+For-comprehensions and monads basics
