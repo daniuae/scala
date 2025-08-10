@@ -1,0 +1,6 @@
+4. Scala with Spark
+Spark Core APIs (RDD, DataFrame, Dataset)
+Spark SQL and DataFrame operations
+Functional transformations and actions
+Spark streaming basics
+Performance tuning and partitioning
