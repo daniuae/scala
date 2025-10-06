@@ -1,0 +1,96 @@
+Scala Commands
+
+——————————————————————————————————————————————————————————————————————————————————————————————————
+MVN
+—————————
+mvn -v
+mvn clean
+mvn compile
+mvn validate
+mvn test
+mvn package
+mvn install
+mvn deploy
+
+mvn build
+mvn archetype:generate
+mvn exec:java -Dexec.mainClass="com.example.Main"
+mvn clean install
+mvn clean install -DskipTests
+mvn clean install -U
+mvn clean install -T 4
+
+sbt clean package
+——————————————————————————————————————————————————————————————————————————————————————————————————
+target/scala-2.13/ScalaSparkETLArchetype_2.13-1.0-SNAPSHOT.jar
+
+ls target/scala-2.13/*.jar
+target/scala-2.13/ScalaSparkETLArchetype_2.13-1.0-SNAPSHOT.jar
+
+spark-submit \
+  --class com.spark.etl.utils.YourMainClass \
+  target/scala-2.13/ScalaSparkETLArchetype_2.13-1.0-SNAPSHOT.jar
+package com.spark.etl.utils
+
+object ETLJob extends App {
+  // your Spark code
+}
+
+
+——————————————————————————————————————————————————————————————————————————————————————————————————
+target/your-app-name-1.0-SNAPSHOT.jar
+mvn exec:java -Dexec.mainClass="com.example.MainApp"
+java -cp target/your-app-name-1.0-SNAPSHOT.jar com.example.MainApp
+spark-submit --class com.example.MainApp target/your-app-name-1.0-SNAPSHOT.jar
+spark-submit --class com.spark.etl.utils target/ScalaSparkETLArchetype-1.0-SNAPSHOT.jar
+——————————————————————————————————————————————————————————————————————————————————————————————————
+
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+export PATH=$JAVA_HOME/bin:$PATH
+
+spark-submit --class com.spark.etl.utils.ETLJob target/scala-2.13/ScalaSparkETLArchetype_2.13-1.0-SNAPSHOT.jar
+——————————————————————————————————————————————————————————————————————————————————————————————————
+sbt new scala/scala-seed.g8    # Create a new Scala project
+sbt console           # Starts console 
+sbt                           # Start interactive sbt shell
+sbt compile                   # Compile source code
+sbt run                       # Run the main class
+sbt clean                     # Clean target directory (compiled classes)
+sbt package                   # Create a JAR file (in target/scala-*/ folder)
+sbt reload                    # Reload build.sbt after changes
+sbt exit                      # Exit sbt shell
+
+
+sbt test                      # Run all unit tests
+sbt testOnly *TestName        # Run a specific test class
+sbt testQuick                 # Run only tests affected by recent changes
+
+
+
+sbt update                    # Download dependencies listed in build.sbt
+sbt show libraryDependencies  # Show all project dependencies
+
+
+cd SparkStreaming230825
+sbt clean compile
+sbt package
+——————————————————————————————————————————————————————————————————————————————————————————————————
+spark-submit --class com.Stream.Demo.StreamingWC target/scala-2.12/your-jar-name.jar
+
+mkdir -p /Users/dhandapanidhandapaniyedappalli/Downloads/Spark-Scala/SparkStreaming230825/resource/input
+——————————————————————————————————————————————————————————————————————————————————————————————————
+Java
+——————————————————————————————————————————————————————————————————————————————————————————————————
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+export PATH=$JAVA_HOME/bin:$PATH
+
+sbt console
+ import org.apache.spark.SparkContext
+ set libraryDependencies +="org.apache.spark" % "spark-core_2.10" % "2.0.2"
+
+——————————————————————————————————————————————————————————————————————————————————————————————————
+GIT Repositories
+——————————————————————————————————————————————————————————————————————————————————————————————————
+
+
+https://github.com/skalskibukowa/Project-Spark-Scala-ETL/blob/master/src/main/scala/Ingestions/TransactionIngests.scala
